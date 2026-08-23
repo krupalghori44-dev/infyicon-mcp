@@ -1,0 +1,14 @@
+{
+  "name": "infyicon-mcp",
+  "version": "1.0.0",
+  "description": "MCP server for Infyicon — search 161,000+ free hand-drawn icons and fetch ready-to-embed SVG or PNG from Claude, ChatGPT, Cursor, VS Code and any MCP client. Hosted endpoint: https://infyicon.com/mcp (no auth).",
+  "main": "standalone.js",
+  "bin": { "infyicon-mcp": "standalone.js" },
+  "scripts": { "start": "node standalone.js" },
+  "repository": { "type": "git", "url": "git+https://github.com/krupalghori44-dev/infyicon-mcp.git" },
+  "homepage": "https://infyicon.com/developers",
+  "author": "Infyicon <info@infyicon.com> (https://infyicon.com)",
+  "license": "MIT",
+  "engines": { "node": ">=18" },
+  "keywords": ["mcp", "model-context-protocol", "mcp-server", "icons", "svg", "png", "icon-search", "infyicon", "claude", "cursor"]
+}
