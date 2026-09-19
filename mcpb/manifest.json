@@ -1,0 +1,49 @@
+{
+  "manifest_version": "0.3",
+  "name": "infyicon",
+  "display_name": "Infyicon — 161,000+ Free Icons",
+  "version": "1.2.0",
+  "description": "Search 161,000+ free hand-drawn icons and drop ready-to-embed SVG or PNG into your work. No API key.",
+  "long_description": "Infyicon gives Claude a free icon library of 161,000+ hand-drawn vector icons in four matching styles (outline, fill, color-outline, color-fill) plus a 61,000-glyph UI webfont.\n\n**What Claude can do with it**\n\n- Search icons by keyword (`search_icons`) or browse popular ones and categories\n- Return the full SVG markup of any icon, one at a time or up to 20 per call, ready to paste into HTML, React, Figma, Canva or a design doc\n- Give transparent PNG links at 16–512 px for email, docs and chat\n- Suggest related icons so a whole set matches\n- Look up CSS classes in the Infyicon UI webfont\n\n**Free with attribution** to infyicon.com for personal and commercial use — see https://infyicon.com/license. Every tool is read-only and needs no account, sign-in or API key. This extension is a lightweight bridge to the hosted endpoint https://infyicon.com/mcp, so it is always up to date.",
+  "author": {
+    "name": "Infyicon",
+    "email": "info@infyicon.com",
+    "url": "https://infyicon.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/krupalghori44-dev/infyicon-mcp.git"
+  },
+  "homepage": "https://infyicon.com",
+  "documentation": "https://infyicon.com/developers",
+  "support": "https://infyicon.com/contact",
+  "icon": "icon.png",
+  "server": {
+    "type": "node",
+    "entry_point": "server/index.js",
+    "mcp_config": {
+      "command": "node",
+      "args": ["${__dirname}/server/index.js"],
+      "env": {}
+    }
+  },
+  "tools": [
+    { "name": "search_icons", "description": "Search 161,000+ free icons by keyword; returns ids, SVG and PNG URLs" },
+    { "name": "get_popular_icons", "description": "Popular/featured icons when there is no search term" },
+    { "name": "get_related_icons", "description": "Related icons on the same theme, across styles" },
+    { "name": "get_icon_svg", "description": "Full ready-to-embed SVG markup of one icon" },
+    { "name": "get_icon_svg_bulk", "description": "SVG markup for up to 20 icons in one call" },
+    { "name": "get_icon_png", "description": "Transparent PNG URLs at 16–512 px for one icon" },
+    { "name": "list_categories", "description": "Most popular icon categories with counts and links" },
+    { "name": "search_uicons", "description": "CSS class names in the Infyicon UI webfont (61,000+ glyphs)" }
+  ],
+  "tools_generated": false,
+  "keywords": ["icons", "svg", "png", "design", "ui", "webfont", "free icons", "vector"],
+  "license": "MIT",
+  "privacy_policies": ["https://infyicon.com/privacy"],
+  "compatibility": {
+    "claude_desktop": ">=0.10.0",
+    "platforms": ["darwin", "win32", "linux"],
+    "runtimes": { "node": ">=18.0.0" }
+  }
+}

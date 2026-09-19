@@ -1,101 +1,94 @@
 # Infyicon MCP Server
 
-[![krupalghori44-dev/infyicon-mcp MCP server](https://glama.ai/mcp/servers/krupalghori44-dev/infyicon-mcp/badges/score.svg)](https://glama.ai/mcp/servers/krupalghori44-dev/infyicon-mcp)
+[![Official MCP Registry](https://img.shields.io/badge/MCP_Registry-io.github.krupalghori44--dev%2Finfyicon--mcp-blue)](https://registry.modelcontextprotocol.io/v0.1/servers?search=infyicon)
+[![npm](https://img.shields.io/npm/v/infyicon-mcp?label=npm%20infyicon-mcp)](https://www.npmjs.com/package/infyicon-mcp)
+[![Glama TDQS](https://glama.ai/mcp/servers/krupalghori44-dev/infyicon-mcp/badges/score.svg)](https://glama.ai/mcp/connectors/com.infyicon/infyicon)
+[![One-click setup](https://img.shields.io/badge/one--click_setup-infyicon.com%2Fconnect-0f62fe)](https://infyicon.com/connect)
 
-Search **161,000+ free hand-drawn vector icons** from any MCP client — Claude Desktop, Claude Code, ChatGPT, Cursor, VS Code, Codex, Gemini CLI, Windsurf and more. Every icon comes in four matching styles (outline, fill, color-outline, color-fill) with ready-to-embed SVG markup and PNG URLs at 16–512 px.
+Search **161,000+ free hand-drawn vector icons** from any AI assistant — Claude, ChatGPT, Cursor, VS Code / Copilot, Codex, Gemini, Windsurf, Zed, Cline, Goose, LM Studio, JetBrains and every other MCP client. Four matching styles (outline, fill, color-outline, color-fill), ready-to-embed SVG markup, transparent PNGs at 16–512 px, and a 61,000-glyph UI webfont.
 
-- **Hosted endpoint (recommended):** `https://infyicon.com/mcp` — streamable HTTP, stateless, **no auth, no API key**
-- **Setup guide with copy-paste config for every client:** https://infyicon.com/developers
-- **Icon license:** free for personal & commercial use with attribution to [infyicon.com](https://infyicon.com) — see https://infyicon.com/license
+- **Hosted endpoint (recommended):** `https://infyicon.com/mcp` — streamable HTTP, stateless, **no auth, no API key**, every tool read-only
+- **One-click install buttons + copy-paste config for every client:** https://infyicon.com/connect
+- **Icon license:** free for personal & commercial use with attribution to [infyicon.com](https://infyicon.com) — https://infyicon.com/license
 
-## Tools
+## Tools (v1.2.0)
 
 | Tool | What it does |
 |---|---|
-| `search_icons` | Search 161,000+ icons by keyword, optionally filtered to one of the four styles. Returns ids, page URLs, SVG + PNG URLs, tags. |
-| `get_icon_svg` | Full SVG markup for an icon id — ready to embed in HTML/JSX/design tools. |
-| `get_icon_png` | Direct transparent-PNG URLs (16, 24, 32, 64, 128, 256, 512 px) for an icon id. |
-| `list_categories` | Most popular icon categories with counts and category-page URLs. |
-| `uicons_lookup` | Look up CSS classes in the Infyicon UI webfont (61,000+ glyphs, `<i class="ii-r-home"></i>`). |
+| `search_icons` | Keyword search over 161,000+ icons, optional style filter, offset paging. Returns ids, names, page/SVG/PNG URLs, tags. |
+| `get_popular_icons` | Featured icons when there is no search term. |
+| `get_related_icons` | Same-theme icons across styles — build a matching set or offer variations. |
+| `get_icon_svg` | Full ready-to-embed SVG markup for one icon id. |
+| `get_icon_svg_bulk` | SVG markup for 1–20 icon ids in one call. |
+| `get_icon_png` | Transparent PNG URLs at 16 / 24 / 32 / 64 / 128 / 256 / 512 px. |
+| `list_categories` | Most popular categories with counts and category-page URLs. |
+| `search_uicons` | CSS class names in the Infyicon UI webfont (`<i class="ii-r-home"></i>`). |
 
-## Quick start — hosted endpoint
+Old names from v1.0/1.1 (`popular_icons`, `related_icons`, `bulk_svg`, `uicons_lookup`) are still accepted as aliases.
+
+## Quick start
+
+**Claude.ai / Claude Desktop** — Settings → Connectors → Add custom connector → `https://infyicon.com/mcp`. Or install the desktop extension: [`infyicon.mcpb`](https://infyicon.com/downloads/infyicon.mcpb).
 
 **Claude Code**
 
 ```bash
 claude mcp add --transport http infyicon https://infyicon.com/mcp
+# or as a plugin
+claude plugin marketplace add krupalghori44-dev/infyicon-mcp && claude plugin install infyicon@infyicon
 ```
 
-**Claude Desktop / claude.ai** — Settings → Connectors → Add custom connector → URL `https://infyicon.com/mcp`
+**ChatGPT** — Settings → Apps & Connectors → Advanced → Developer mode → Create → MCP URL `https://infyicon.com/mcp`, auth *None*.
 
-**Cursor / VS Code / Windsurf** (`mcp.json`)
+**Cursor** — [Add to Cursor](https://infyicon.com/connect) or `~/.cursor/mcp.json`:
 
 ```json
-{
-  "mcpServers": {
-    "infyicon": { "url": "https://infyicon.com/mcp" }
-  }
-}
+{ "mcpServers": { "infyicon": { "url": "https://infyicon.com/mcp" } } }
 ```
 
-**Codex CLI** (`~/.codex/config.toml`)
-
-```toml
-[mcp_servers.infyicon]
-url = "https://infyicon.com/mcp"
-```
-
-**Gemini CLI** (`~/.gemini/settings.json`)
+**VS Code / GitHub Copilot** — `.vscode/mcp.json`:
 
 ```json
-{
-  "mcpServers": {
-    "infyicon": { "httpUrl": "https://infyicon.com/mcp" }
-  }
-}
+{ "servers": { "infyicon": { "type": "http", "url": "https://infyicon.com/mcp" } } }
 ```
 
-Full, always-current instructions for all clients: **https://infyicon.com/developers**
+**Codex CLI** — `codex mcp add infyicon --url https://infyicon.com/mcp`
 
-## Run locally (stdio)
+**Gemini CLI** — `gemini mcp add --transport http infyicon https://infyicon.com/mcp` · **Gemini app** — Settings → Connected apps → Add custom MCP server
 
-`standalone.js` is a zero-dependency Node 18+ entry point. It answers `initialize` / `tools/list` locally and relays `tools/call` to the hosted endpoint (where the search index and 161k SVG assets live).
+**Windsurf** — `{ "mcpServers": { "infyicon": { "serverUrl": "https://infyicon.com/mcp" } } }`
+
+**Cline / Roo Code** — `{ "mcpServers": { "infyicon": { "type": "streamableHttp", "url": "https://infyicon.com/mcp" } } }`
+
+**Any stdio-only client (Zed, Goose, LM Studio, JetBrains, Perplexity…)** — the zero-dependency npm bridge relays to the hosted server:
+
+```json
+{ "mcpServers": { "infyicon": { "command": "npx", "args": ["-y", "infyicon-mcp"] } } }
+```
+
+## Run it yourself
 
 ```bash
-git clone https://github.com/krupalghori44-dev/infyicon-mcp.git
-node infyicon-mcp/standalone.js          # MCP over stdio
-node infyicon-mcp/standalone.js --http 3000   # or streamable HTTP at :3000
+npx -y infyicon-mcp             # stdio bridge
+npx -y infyicon-mcp --http 3000 # local HTTP mirror at POST http://127.0.0.1:3000/mcp
+docker build -t infyicon-mcp . && docker run -i infyicon-mcp
 ```
 
-Client config for the stdio version:
+`standalone.js` relays `initialize`, `tools/list` and `tools/call` to `https://infyicon.com/mcp` (override with `INFYICON_MCP_UPSTREAM`), so it never goes stale. `mcp.js` is the reference implementation that runs on infyicon.com (Express, hand-rolled JSON-RPC, no SDK).
 
-```json
-{
-  "mcpServers": {
-    "infyicon": { "command": "node", "args": ["/path/to/infyicon-mcp/standalone.js"] }
-  }
-}
-```
+## Repository layout
 
-### Docker
+- `standalone.js` — npm package `infyicon-mcp` (stdio / `--http`)
+- `mcp.js` — hosted server source
+- `mcpb/` — Claude Desktop extension source; build with `npx @anthropic-ai/mcpb pack mcpb dist/infyicon.mcpb`
+- `.claude-plugin/` + `.mcp.json` — Claude Code plugin marketplace
+- `connect/connect.html` — the one-click setup page served at https://infyicon.com/connect
+- `server.json` — Official MCP Registry manifest
 
-```bash
-docker build -t infyicon-mcp .
-docker run -i infyicon-mcp
-```
+## Privacy
 
-## Repo layout
-
-- `standalone.js` — zero-dependency stdio/HTTP server (local bridge; what the Dockerfile runs)
-- `mcp.js` — the production Express module that serves `https://infyicon.com/mcp` (reference; depends on server-side assets)
-- `Dockerfile` — builds the standalone bridge
-
-## Example
-
-> "Find me a shopping cart icon in outline style and give me the SVG."
-
-The client calls `search_icons {"query":"shopping cart","style":"outline"}`, picks an id like `shopping-cart-12_10432`, then `get_icon_svg` returns the full markup to paste straight into your project.
+Tool arguments (search words, icon ids, style filters) are sent to infyicon.com over HTTPS; responses contain icon metadata, SVG markup and PNG URLs. No account, API key, telemetry or local file access. Privacy policy: https://infyicon.com/privacy · Contact: info@infyicon.com
 
 ## License
 
-Code in this repository: [MIT](LICENSE). Icons served by the API remain free for personal and commercial use **with attribution to infyicon.com** — details at https://infyicon.com/license.
+Server and bridge code: MIT. Icons: free with attribution — https://infyicon.com/license

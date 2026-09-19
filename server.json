@@ -2,8 +2,8 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.krupalghori44-dev/infyicon-mcp",
   "title": "Infyicon",
-  "description": "Search 161,000+ free hand-drawn icons and fetch ready-to-embed SVG or PNG from any MCP client.",
-  "version": "1.0.0",
+  "description": "Search 161,000+ free hand-drawn icons in 4 styles and fetch ready-to-embed SVG (single or bulk) or PNG URLs, related icons, categories and UI-webfont classes. Read-only, no API key.",
+  "version": "1.2.0",
   "repository": {
     "url": "https://github.com/krupalghori44-dev/infyicon-mcp",
     "source": "github"
@@ -13,6 +13,18 @@
     {
       "type": "streamable-http",
       "url": "https://infyicon.com/mcp"
+    }
+  ],
+  "packages": [
+    {
+      "registryType": "npm",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "identifier": "infyicon-mcp",
+      "version": "1.2.0",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      }
     }
   ]
 }

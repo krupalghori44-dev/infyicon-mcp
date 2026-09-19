@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "infyicon": {
+      "type": "http",
+      "url": "https://infyicon.com/mcp"
+    }
+  }
+}

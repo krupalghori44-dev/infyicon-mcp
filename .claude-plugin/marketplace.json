@@ -1,0 +1,26 @@
+{
+  "name": "infyicon",
+  "owner": {
+    "name": "Infyicon",
+    "email": "info@infyicon.com"
+  },
+  "metadata": {
+    "description": "Free icon tools for Claude Code",
+    "version": "1.2.0"
+  },
+  "plugins": [
+    {
+      "name": "infyicon",
+      "source": "./",
+      "description": "Search 161,000+ free hand-drawn icons and paste ready-to-embed SVG/PNG. No API key.",
+      "version": "1.2.0",
+      "category": "design",
+      "keywords": [
+        "icons",
+        "svg",
+        "png",
+        "design"
+      ]
+    }
+  ]
+}

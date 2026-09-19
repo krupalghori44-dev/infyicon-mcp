@@ -1,0 +1,26 @@
+{
+  "name": "infyicon",
+  "version": "1.2.0",
+  "description": "Search 161,000+ free hand-drawn icons and paste ready-to-embed SVG/PNG. No API key.",
+  "author": {
+    "name": "Infyicon",
+    "email": "info@infyicon.com",
+    "url": "https://infyicon.com"
+  },
+  "homepage": "https://infyicon.com/developers",
+  "repository": "https://github.com/krupalghori44-dev/infyicon-mcp",
+  "license": "MIT",
+  "keywords": [
+    "icons",
+    "svg",
+    "png",
+    "design",
+    "free-icons"
+  ],
+  "mcpServers": {
+    "infyicon": {
+      "type": "http",
+      "url": "https://infyicon.com/mcp"
+    }
+  }
+}
