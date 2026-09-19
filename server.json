@@ -2,7 +2,7 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.krupalghori44-dev/infyicon-mcp",
   "title": "Infyicon",
-  "description": "Search 161,000+ free hand-drawn icons in 4 styles and fetch ready-to-embed SVG (single or bulk) or PNG URLs, related icons, categories and UI-webfont classes. Read-only, no API key.",
+  "description": "Search 161,000+ free icons; get SVG (single/bulk), PNG, related icons, webfont classes. No API key.",
   "version": "1.2.0",
   "repository": {
     "url": "https://github.com/krupalghori44-dev/infyicon-mcp",
