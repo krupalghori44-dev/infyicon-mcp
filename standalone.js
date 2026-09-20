@@ -173,7 +173,7 @@ async function handle(msg) {
       return rpcResult(id, {
       protocolVersion: (params && params.protocolVersion) === '2025-03-26' ? '2025-03-26' : PROTO,
       capabilities: { tools: { listChanged: false } },
-      serverInfo: { name: 'infyicon', title: 'Infyicon — 161,000+ free icons', version: '1.2.0' },
+      serverInfo: { name: 'infyicon', title: 'Infyicon — 161,000+ free icons', version: '1.2.0', websiteUrl: 'https://infyicon.com/connect', icons: [{ src: 'https://infyicon.com/icon-192.png', mimeType: 'image/png', sizes: ['192x192'] }, { src: 'https://infyicon.com/icon-512.png', mimeType: 'image/png', sizes: ['512x512'] }] },
       instructions: 'Search and fetch free Infyicon vector icons (SVG/PNG) and UI-webfont CSS classes. All icons are free with attribution to infyicon.com. Typical flow: search_icons -> get_icon_svg / get_icon_svg_bulk / get_icon_png. No search term? get_popular_icons. Variations? get_related_icons. CSS icon-font class? search_uicons.',
     });
   }

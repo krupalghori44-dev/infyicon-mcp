@@ -22,8 +22,9 @@ a{color:var(--tealink)}code,pre{font-family:ui-monospace,"Cascadia Code","JetBra
 .wrap{max-width:1080px;margin:0 auto;padding:0 20px 80px}
 
 /* hero */
-.hero{position:relative;padding:44px 0 28px;overflow:hidden}
-.hero:before{content:"";position:absolute;inset:-40% -20% auto;height:520px;background:radial-gradient(600px 260px at 18% 20%,var(--tealtint),transparent 70%),radial-gradient(520px 240px at 82% 0%,rgba(0,189,163,.12),transparent 70%);pointer-events:none}
+.hero{position:relative;padding:44px 0 28px}
+body:before{content:"";position:absolute;left:0;right:0;top:0;height:560px;background:linear-gradient(180deg,rgba(0,223,192,.13) 0%,rgba(0,223,192,.06) 45%,rgba(0,223,192,0) 100%);pointer-events:none;z-index:0}
+.wrap{position:relative;z-index:1}
 .brand{display:flex;align-items:center;gap:12px;margin-bottom:18px;position:relative}
 .brand img{width:46px;height:46px;border-radius:12px;box-shadow:0 4px 14px rgba(0,223,192,.35)}
 .brand b{font-size:17px}.pill{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;padding:3px 10px;border-radius:999px;background:var(--tealtint);color:var(--tealink);border:1px solid rgba(0,223,192,.35)}
@@ -48,7 +49,7 @@ h1 span{background:linear-gradient(90deg,var(--teal2),var(--teal));-webkit-backg
 .btn.copied,.cp.copied{background:var(--teal)!important;border-color:var(--teal)!important;color:#062a25!important;animation:pop .35s ease}
 @keyframes pop{0%{transform:scale(.94)}55%{transform:scale(1.06)}100%{transform:scale(1)}}
 
-.logo{width:22px;height:22px;border-radius:6px;display:inline-grid;place-items:center;font-size:11px;font-weight:800;color:#fff;flex:none;letter-spacing:-.02em}
+.logo{width:20px;height:20px;object-fit:contain;flex:none;border-radius:4px}.card h3 .logo{width:24px;height:24px}
 
 /* sections */
 h2{margin:40px 0 14px;font-size:22px;letter-spacing:-.01em;display:flex;align-items:center;gap:10px}
@@ -93,73 +94,73 @@ footer{margin-top:48px;color:var(--mut);font-size:13px;border-top:1px solid var(
 
 <h2>One-click install</h2>
 <div class="row">
-  <a class="btn" id="cursor" href="#" data-deep="cursor"><span class="logo" style="background:#000">C</span>Add to Cursor</a>
-  <a class="btn" id="vscode" href="#" data-deep="vscode"><span class="logo" style="background:#0078d4">VS</span>Install in VS Code</a>
-  <a class="btn" id="vscodei" href="#" data-deep="vscode"><span class="logo" style="background:#24bfa5">VS</span>VS Code Insiders</a>
-  <a class="btn" id="lms" href="#"><span class="logo" style="background:#5b5bd6">LM</span>Add to LM Studio</a>
-  <a class="btn" id="goose" href="#" data-deep="goose"><span class="logo" style="background:#111">G</span>Add to Goose</a>
-  <a class="btn" href="https://infyicon.com/downloads/infyicon.mcpb" download><span class="logo" style="background:#d97757">Cl</span>Claude Desktop (.mcpb)</a>
-  <a class="btn" href="#" data-add="claude"><span class="logo" style="background:#d97757">Cl</span>Add to Claude.ai</a>
-  <a class="btn" href="#" data-add="chatgpt"><span class="logo" style="background:#10a37f">GP</span>Add to ChatGPT</a>
-  <a class="btn" href="#" data-add="gemini"><span class="logo" style="background:#4285f4">Ge</span>Add to Gemini</a>
+  <a class="btn" id="cursor" href="#" data-deep="cursor"><img class="logo" src="https://cdn.simpleicons.org/cursor" alt="Cursor">Add to Cursor</a>
+  <a class="btn" id="vscode" href="#" data-deep="vscode"><img class="logo" src="https://www.google.com/s2/favicons?domain=code.visualstudio.com&sz=64" alt="VS Code">Install in VS Code</a>
+  <a class="btn" id="vscodei" href="#" data-deep="vscode"><img class="logo" src="https://www.google.com/s2/favicons?domain=code.visualstudio.com&sz=64" alt="VS Code">VS Code Insiders</a>
+  <a class="btn" id="lms" href="#"><img class="logo" src="https://cdn.simpleicons.org/lmstudio" alt="LM Studio">Add to LM Studio</a>
+  <a class="btn" id="goose" href="#" data-deep="goose"><img class="logo" src="https://www.google.com/s2/favicons?domain=goose.ai&sz=64" alt="Goose">Add to Goose</a>
+  <a class="btn" href="https://infyicon.com/downloads/infyicon.mcpb" download><img class="logo" src="https://cdn.simpleicons.org/claude" alt="Claude">Claude Desktop (.mcpb)</a>
+  <a class="btn" href="#" data-add="claude"><img class="logo" src="https://cdn.simpleicons.org/claude" alt="Claude">Add to Claude.ai</a>
+  <a class="btn" href="#" data-add="chatgpt"><img class="logo" src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=64" alt="ChatGPT">Add to ChatGPT</a>
+  <a class="btn" href="#" data-add="gemini"><img class="logo" src="https://cdn.simpleicons.org/googlegemini" alt="Gemini">Add to Gemini</a>
   <button class="btn" data-copy='{"mcpServers":{"infyicon":{"url":"https://infyicon.com/mcp"}}}' data-label="Copy mcp.json">Copy mcp.json</button>
 </div>
 
 <h2>Set up by client</h2>
 <div class="grid">
 
-<div class="card"><h3><span class="logo" style="background:#d97757">Cl</span>Claude.ai &amp; Claude Desktop</h3><p>Web/desktop chat — custom connector, no code.</p>
+<div class="card"><h3><img class="logo" src="https://cdn.simpleicons.org/claude" alt="Claude">Claude.ai &amp; Claude Desktop</h3><p>Web/desktop chat — custom connector, no code.</p>
 <div class="row"><a class="btn p" href="#" data-add="claude">Add to Claude.ai</a><a class="btn" href="https://infyicon.com/downloads/infyicon.mcpb" download>Claude Desktop (.mcpb)</a></div>
-<ol class="steps"><li>Settings → <b>Connectors</b> → <b>Add custom connector</b></li><li>Name <b>Infyicon</b>, URL <code>https://infyicon.com/mcp</code> → Add</li><li>Enable it in the chat <b>+</b> menu</li></ol>
+<ol class="steps"><li><b>Customize</b> → <b>Connectors</b> → <b>Add</b> (custom connector)</li><li>Name <b>Infyicon</b>, URL <code>https://infyicon.com/mcp</code> → Continue</li><li>Enable it in the chat <b>+</b> menu</li></ol>
 </div>
 
-<div class="card"><h3><span class="logo" style="background:#d97757">Cl</span>Claude Code</h3><p>Terminal agent — one command, or as a plugin.</p>
+<div class="card"><h3><img class="logo" src="https://cdn.simpleicons.org/claude" alt="Claude">Claude Code</h3><p>Terminal agent — one command, or as a plugin.</p>
 <div class="code"><pre>claude mcp add --transport http infyicon https://infyicon.com/mcp</pre><button class="cp" data-copy="claude mcp add --transport http infyicon https://infyicon.com/mcp">copy</button></div>
 <div class="code"><pre>claude plugin marketplace add krupalghori44-dev/infyicon-mcp
 claude plugin install infyicon@infyicon</pre><button class="cp" data-copy="claude plugin marketplace add krupalghori44-dev/infyicon-mcp && claude plugin install infyicon@infyicon">copy</button></div></div>
 
-<div class="card"><h3><span class="logo" style="background:#10a37f">GP</span>ChatGPT</h3><p>Custom connector (Developer mode) — Plus/Pro/Team/Enterprise.</p>
+<div class="card"><h3><img class="logo" src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=64" alt="ChatGPT">ChatGPT</h3><p>Custom connector (Developer mode) — Plus/Pro/Team/Enterprise.</p>
 <div class="row"><a class="btn p" href="#" data-add="chatgpt">Add to ChatGPT</a></div>
-<ol class="steps"><li>Settings → <b>Apps &amp; Connectors</b> → <b>Advanced</b> → turn on <b>Developer mode</b></li><li><b>Create</b> → name <b>Infyicon</b>, MCP URL <code>https://infyicon.com/mcp</code>, auth <b>None</b> → Create</li><li>In a chat: <b>+ → More → Infyicon</b></li></ol></div>
+<ol class="steps"><li>Settings → <b>Plugins</b> → <b>Advanced</b> → turn on <b>Developer mode</b></li><li><b>Create</b> → name <b>Infyicon</b>, MCP URL <code>https://infyicon.com/mcp</code>, auth <b>None</b> → Create</li><li>In a chat: <b>+ → More → Infyicon</b></li></ol></div>
 
-<div class="card"><h3><span class="logo" style="background:#000">C</span>Cursor</h3><p>Click to install, or paste into <code>~/.cursor/mcp.json</code>.</p>
+<div class="card"><h3><img class="logo" src="https://cdn.simpleicons.org/cursor" alt="Cursor">Cursor</h3><p>Click to install, or paste into <code>~/.cursor/mcp.json</code>.</p>
 <div class="row"><a class="btn p" id="cursor2" href="#" data-deep="cursor">Add to Cursor</a></div>
 <div class="code"><pre>{ "mcpServers": { "infyicon": { "url": "https://infyicon.com/mcp" } } }</pre><button class="cp" data-copy='{"mcpServers":{"infyicon":{"url":"https://infyicon.com/mcp"}}}'>copy</button></div></div>
 
-<div class="card"><h3><span class="logo" style="background:#0078d4">VS</span>VS Code · GitHub Copilot</h3><p>Click to install, or <code>MCP: Add Server</code> → HTTP.</p>
+<div class="card"><h3><img class="logo" src="https://www.google.com/s2/favicons?domain=code.visualstudio.com&sz=64" alt="VS Code">VS Code · GitHub Copilot</h3><p>Click to install, or <code>MCP: Add Server</code> → HTTP.</p>
 <div class="row"><a class="btn p" id="vscode2" href="#" data-deep="vscode">Install in VS Code</a><a class="btn" id="vscodei2" href="#" data-deep="vscode">Insiders</a></div>
 <div class="code"><pre><span class="cm">// .vscode/mcp.json</span>
 { "servers": { "infyicon": { "type": "http", "url": "https://infyicon.com/mcp" } } }</pre><button class="cp" data-copy='{"servers":{"infyicon":{"type":"http","url":"https://infyicon.com/mcp"}}}'>copy</button></div></div>
 
-<div class="card"><h3><span class="logo" style="background:#000">Cx</span>OpenAI Codex CLI</h3><p>Also works in the Codex IDE extension.</p>
+<div class="card"><h3><img class="logo" src="https://www.google.com/s2/favicons?domain=openai.com&sz=64" alt="OpenAI Codex">OpenAI Codex CLI</h3><p>Also works in the Codex IDE extension.</p>
 <div class="code"><pre>codex mcp add infyicon --url https://infyicon.com/mcp</pre><button class="cp" data-copy="codex mcp add infyicon --url https://infyicon.com/mcp">copy</button></div>
 <div class="code"><pre><span class="cm"># ~/.codex/config.toml</span>
 [mcp_servers.infyicon]
 url = "https://infyicon.com/mcp"</pre><button class="cp" data-copy='[mcp_servers.infyicon]
 url = "https://infyicon.com/mcp"'>copy</button></div></div>
 
-<div class="card"><h3><span class="logo" style="background:#4285f4">Ge</span>Gemini CLI &amp; Gemini app</h3><p>CLI: install the extension (adds the server, a <code>/icons</code> command and usage context). Gemini app: Settings → <b>Connected apps</b> → <b>Add custom MCP server</b>.</p>
+<div class="card"><h3><img class="logo" src="https://cdn.simpleicons.org/googlegemini" alt="Gemini">Gemini CLI &amp; Gemini app</h3><p>CLI: install the extension (adds the server, a <code>/icons</code> command and usage context). Gemini app: Settings → <b>Connected apps</b> → <b>Add custom MCP server</b>.</p>
 <div class="row"><a class="btn p" href="#" data-add="gemini">Add to Gemini app</a></div>
 <div class="code"><pre>gemini extensions install https://github.com/krupalghori44-dev/infyicon-mcp</pre><button class="cp" data-copy="gemini extensions install https://github.com/krupalghori44-dev/infyicon-mcp">copy</button></div>
 <div class="code"><pre>gemini mcp add --transport http infyicon https://infyicon.com/mcp   <span class="cm"># plain MCP</span></pre><button class="cp" data-copy="gemini mcp add --transport http infyicon https://infyicon.com/mcp">copy</button></div>
 <div class="code"><pre><span class="cm">// ~/.gemini/settings.json</span>
 { "mcpServers": { "infyicon": { "httpUrl": "https://infyicon.com/mcp" } } }</pre><button class="cp" data-copy='{"mcpServers":{"infyicon":{"httpUrl":"https://infyicon.com/mcp"}}}'>copy</button></div></div>
 
-<div class="card"><h3><span class="logo" style="background:#09b6a2">W</span>Windsurf</h3><p><code>~/.codeium/windsurf/mcp_config.json</code></p>
+<div class="card"><h3><img class="logo" src="https://cdn.simpleicons.org/windsurf" alt="Windsurf">Windsurf</h3><p><code>~/.codeium/windsurf/mcp_config.json</code></p>
 <div class="code"><pre>{ "mcpServers": { "infyicon": { "serverUrl": "https://infyicon.com/mcp" } } }</pre><button class="cp" data-copy='{"mcpServers":{"infyicon":{"serverUrl":"https://infyicon.com/mcp"}}}'>copy</button></div></div>
 
-<div class="card"><h3><span class="logo" style="background:#7c3aed">Cl</span>Cline · Roo Code · Kilo</h3><p>MCP Servers → Remote Servers → add, or edit <code>cline_mcp_settings.json</code>.</p>
+<div class="card"><h3><img class="logo" src="https://cdn.simpleicons.org/cline" alt="Cline">Cline · Roo Code · Kilo</h3><p>MCP Servers → Remote Servers → add, or edit <code>cline_mcp_settings.json</code>.</p>
 <div class="code"><pre>{ "mcpServers": { "infyicon": { "type": "streamableHttp", "url": "https://infyicon.com/mcp" } } }</pre><button class="cp" data-copy='{"mcpServers":{"infyicon":{"type":"streamableHttp","url":"https://infyicon.com/mcp"}}}'>copy</button></div></div>
 
-<div class="card"><h3><span class="logo" style="background:#2563eb">Z</span>Zed</h3><p>Extensions → search <b>Infyicon</b> → Install, or <code>settings.json</code>:</p>
+<div class="card"><h3><img class="logo" src="https://cdn.simpleicons.org/zedindustries" alt="Zed">Zed</h3><p>Extensions → search <b>Infyicon</b> → Install, or <code>settings.json</code>:</p>
 <div class="code"><pre>{ "context_servers": { "infyicon": {
   "source": "custom", "command": "npx", "args": ["-y", "infyicon-mcp"] } } }</pre><button class="cp" data-copy='{"context_servers":{"infyicon":{"source":"custom","command":"npx","args":["-y","infyicon-mcp"]}}}'>copy</button></div></div>
 
-<div class="card"><h3><span class="logo" style="background:#111">G</span>Goose · LM Studio · JetBrains · Perplexity · any stdio client</h3><p>Use the npm bridge — it relays to the hosted server, zero dependencies.</p>
+<div class="card"><h3><img class="logo" src="https://www.google.com/s2/favicons?domain=goose.ai&sz=64" alt="Goose">Goose · LM Studio · JetBrains · Perplexity · any stdio client</h3><p>Use the npm bridge — it relays to the hosted server, zero dependencies.</p>
 <div class="code"><pre>{ "mcpServers": { "infyicon": { "command": "npx", "args": ["-y", "infyicon-mcp"] } } }</pre><button class="cp" data-copy='{"mcpServers":{"infyicon":{"command":"npx","args":["-y","infyicon-mcp"]}}}'>copy</button></div>
 <div class="row"><a class="btn" id="goose2" href="#" data-deep="goose">Add to Goose</a><a class="btn" id="lms2" href="#">Add to LM Studio</a></div></div>
 
-<div class="card"><h3><span class="logo" style="background:#2496ed">D</span>Docker · self-host</h3><p>Run your own bridge or HTTP mirror.</p>
+<div class="card"><h3><img class="logo" src="https://cdn.simpleicons.org/docker" alt="Docker">Docker · self-host</h3><p>Run your own bridge or HTTP mirror.</p>
 <div class="code"><pre>npx -y infyicon-mcp            <span class="cm"># stdio</span>
 npx -y infyicon-mcp --http 3000 <span class="cm"># POST http://127.0.0.1:3000/mcp</span></pre><button class="cp" data-copy="npx -y infyicon-mcp --http 3000">copy</button></div></div>
 
@@ -214,8 +215,8 @@ npx -y infyicon-mcp --http 3000 <span class="cm"># POST http://127.0.0.1:3000/mc
   document.querySelectorAll('[data-copy]').forEach(function(el){el.addEventListener('click',function(ev){ev.preventDefault();copy(el.getAttribute('data-copy')).then(function(){flash(el);toast('Copied to clipboard')})})});
 
   // "Add to Claude / ChatGPT / Gemini": copy URL + open the connector settings page
-  var ADD={claude:{u:'https://claude.ai/settings/connectors',m:'URL copied — click “Add custom connector”, paste https://infyicon.com/mcp, Add'},
-           chatgpt:{u:'https://chatgpt.com/#settings/Connectors',m:'URL copied — Advanced → Developer mode → Create, paste https://infyicon.com/mcp, auth None'},
+  var ADD={claude:{u:'https://claude.ai/customize/connectors?modal=add-custom-connector',m:'URL copied — name it Infyicon, paste https://infyicon.com/mcp, Continue'},
+           chatgpt:{u:'https://chatgpt.com/#settings/Plugins',m:'URL copied — Plugins → Advanced → Developer mode → Create, paste https://infyicon.com/mcp, auth None'},
            gemini:{u:'https://gemini.google.com/app',m:'URL copied — Settings → Connected apps → Add custom MCP server, paste https://infyicon.com/mcp'}};
   document.querySelectorAll('[data-add]').forEach(function(el){el.addEventListener('click',function(ev){ev.preventDefault();var a=ADD[el.getAttribute('data-add')];if(!a)return;var w=window.open(a.u,'_blank');copy(URL_).then(function(){flash(el);toast(a.m,7000)});if(!w){location.href=a.u}})});
 

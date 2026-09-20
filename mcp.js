@@ -305,7 +305,7 @@ async function handle(msg) {
     return rpcResult(id, {
       protocolVersion: (params && params.protocolVersion) === '2025-03-26' ? '2025-03-26' : PROTO,
       capabilities: { tools: { listChanged: false } },
-      serverInfo: { name: 'infyicon', title: 'Infyicon — 161,000+ free icons', version: '1.2.0' },
+      serverInfo: { name: 'infyicon', title: 'Infyicon — 161,000+ free icons', version: '1.2.0', websiteUrl: 'https://infyicon.com/connect', icons: [{ src: 'https://infyicon.com/icon-192.png', mimeType: 'image/png', sizes: ['192x192'] }, { src: 'https://infyicon.com/icon-512.png', mimeType: 'image/png', sizes: ['512x512'] }] },
       instructions: 'Search and fetch free Infyicon vector icons (SVG/PNG) and UI-webfont CSS classes. All icons are free with attribution to infyicon.com. Typical flow: search_icons (offset paging) -> get_icon_svg (embed one SVG), get_icon_svg_bulk (embed up to 20 at once) or get_icon_png (link a PNG). No search term yet? get_popular_icons. Have an icon and want variations? get_related_icons. Want a CSS icon-font class instead of a file? search_uicons. All tools are read-only and need no API key.',
     });
   }
