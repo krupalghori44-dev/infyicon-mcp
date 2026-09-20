@@ -1,0 +1,12 @@
+{
+  "name": "infyicon",
+  "version": "1.2.1",
+  "description": "Search 161,000+ free Infyicon vector icons and get ready-to-embed SVG/PNG from Gemini CLI. No API key.",
+  "contextFileName": "GEMINI.md",
+  "mcpServers": {
+    "infyicon": {
+      "httpUrl": "https://infyicon.com/mcp",
+      "timeout": 30000
+    }
+  }
+}

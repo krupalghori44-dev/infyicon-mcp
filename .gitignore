@@ -1,2 +1,7 @@
 dist/
-
+node_modules/
+.mcpregistry_*
+*_token
+_*.log
+mcp-publisher.exe
+SMITHERY_TXT.txt

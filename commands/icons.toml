@@ -1,0 +1,11 @@
+description = "Find free Infyicon icons for a concept and show ready-to-paste SVG (usage: /icons <what you need> [style] [count])"
+prompt = """
+Find icons on Infyicon for: {{args}}
+
+Steps:
+1. Call `search_icons` with the main concept from the request. If the user named a style (outline, fill, color-outline, color-fill) pass it as the style filter; otherwise default to outline.
+2. Show the top matches as a short numbered list: name, style, and the icon page URL.
+3. If the user asked for a specific number of icons or said "give me the SVG", call `get_icon_svg_bulk` for the best matches (max 20) and print each SVG in a fenced code block labelled with the icon name so it can be pasted into HTML/JSX.
+4. If nothing matches, retry once with a simpler synonym before reporting no results.
+5. End with one line: "Free with attribution to infyicon.com — https://infyicon.com/license".
+"""

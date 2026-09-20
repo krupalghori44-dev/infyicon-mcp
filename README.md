@@ -54,7 +54,7 @@ claude plugin marketplace add krupalghori44-dev/infyicon-mcp && claude plugin in
 
 **Codex CLI** — `codex mcp add infyicon --url https://infyicon.com/mcp`
 
-**Gemini CLI** — `gemini mcp add --transport http infyicon https://infyicon.com/mcp` · **Gemini app** — Settings → Connected apps → Add custom MCP server
+**Gemini CLI (extension, recommended)** — `gemini extensions install https://github.com/krupalghori44-dev/infyicon-mcp` — adds the server, a `/icons <query>` command and usage context. Or plain MCP: `gemini mcp add --transport http infyicon https://infyicon.com/mcp` · **Gemini app** — Settings → Connected apps → Add custom MCP server
 
 **Windsurf** — `{ "mcpServers": { "infyicon": { "serverUrl": "https://infyicon.com/mcp" } } }`
 
@@ -82,6 +82,7 @@ docker build -t infyicon-mcp . && docker run -i infyicon-mcp
 - `mcp.js` — hosted server source
 - `mcpb/` — Claude Desktop extension source; build with `npx @anthropic-ai/mcpb pack mcpb dist/infyicon.mcpb`
 - `.claude-plugin/` + `.mcp.json` — Claude Code plugin marketplace
+- `gemini-extension.json` + `GEMINI.md` + `commands/` — Gemini CLI extension (`/icons` command)
 - `connect/connect.html` — the one-click setup page served at https://infyicon.com/connect
 - `server.json` — Official MCP Registry manifest
 
