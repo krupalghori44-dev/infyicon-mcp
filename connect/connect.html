@@ -49,7 +49,7 @@ h1 span{background:linear-gradient(90deg,var(--teal2),var(--teal));-webkit-backg
 .btn.copied,.cp.copied{background:var(--teal)!important;border-color:var(--teal)!important;color:#062a25!important;animation:pop .35s ease}
 @keyframes pop{0%{transform:scale(.94)}55%{transform:scale(1.06)}100%{transform:scale(1)}}
 
-.logo{width:20px;height:20px;object-fit:contain;flex:none;border-radius:4px}.card h3 .logo{width:24px;height:24px}
+.logo{width:20px;height:20px;object-fit:contain;flex:none;border-radius:4px}@media(prefers-color-scheme:dark){.logo.mono{filter:brightness(0) invert(1)}}.card h3 .logo{width:24px;height:24px}
 
 /* sections */
 h2{margin:40px 0 14px;font-size:22px;letter-spacing:-.01em;display:flex;align-items:center;gap:10px}
@@ -188,6 +188,14 @@ npx -y infyicon-mcp --http 3000 <span class="cm"># POST http://127.0.0.1:3000/mc
 <a class="btn" href="https://www.npmjs.com/package/infyicon-mcp">npm</a>
 <a class="btn" href="https://github.com/krupalghori44-dev/infyicon-mcp">GitHub</a>
 <a class="btn" href="https://infyicon.com/.well-known/mcp/server-card.json">Server card</a>
+</div>
+
+<h2>Not an AI tool? Use the plugins</h2>
+<div class="row">
+<a class="btn" href="https://infyicon.com/miro"><img class="logo mono" src="https://cdn.simpleicons.org/miro/050038" alt="Miro">Install in Miro</a>
+<a class="btn" href="https://www.figma.com/community/plugin/1672307789402313452/infyicon-free-icons"><img class="logo" src="https://cdn.simpleicons.org/figma" alt="Figma">Figma plugin</a>
+<a class="btn" href="https://www.framer.com/marketplace/plugins/infyicon-free-icons/"><img class="logo" src="https://cdn.simpleicons.org/framer/0055FF" alt="Framer">Framer plugin</a>
+<a class="btn" href="https://infyicon.com/integrations">All 17 integrations →</a>
 </div>
 
 <footer>Icons are free for personal &amp; commercial use with attribution to <a href="https://infyicon.com">infyicon.com</a> · <a href="https://infyicon.com/license">License</a> · <a href="https://infyicon.com/privacy">Privacy</a> · <a href="https://infyicon.com/developers">API &amp; MCP docs</a> · <a href="https://infyicon.com/contact">Contact</a></footer>
