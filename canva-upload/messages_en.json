@@ -1,0 +1,78 @@
+{
+  "1cx1FG": {
+    "defaultMessage": "You’re using Infyicon — Free Icons for free. Icons are free with attribution to infyicon.com.",
+    "description": "Monetization status: tells the user they're on the free Infyicon tier"
+  },
+  "8Rf5Hy": {
+    "defaultMessage": "Select {name}",
+    "description": "Accessible label for the button that selects an icon"
+  },
+  "BczJeS": {
+    "defaultMessage": "Color outline",
+    "description": "Icon style filter option"
+  },
+  "CsjJOu": {
+    "defaultMessage": "Load more",
+    "description": "Button to load the next page of icons"
+  },
+  "JNB2Nw": {
+    "defaultMessage": "Upgrade to Infyicon Premium",
+    "description": "Upgrade pathway to the paid Infyicon Premium plan (removes attribution)"
+  },
+  "SGVZsW": {
+    "defaultMessage": "No icons found — try another word.",
+    "description": "Message shown when a search returns no icons"
+  },
+  "TVv2J3": {
+    "defaultMessage": "Can’t reach infyicon.com — check your internet connection.",
+    "description": "Error shown when the icon search API can't be reached"
+  },
+  "U5kETI": {
+    "defaultMessage": "Filled",
+    "description": "Icon style filter option"
+  },
+  "WTMh71": {
+    "defaultMessage": "Add to design",
+    "description": "Primary button that inserts the selected icon into the design"
+  },
+  "e5ZugA": {
+    "defaultMessage": "Manage Infyicon account",
+    "description": "Link to manage the user's Infyicon plan and licence on infyicon.com"
+  },
+  "giw8z/": {
+    "defaultMessage": "Couldn’t add that icon — try another one.",
+    "description": "Error shown when inserting an icon into the design fails"
+  },
+  "gtPsO7": {
+    "defaultMessage": "Browse all 160,000+ icons on infyicon.com",
+    "description": "Footer link to browse the whole library"
+  },
+  "jGS1xF": {
+    "defaultMessage": "Color filled",
+    "description": "Icon style filter option"
+  },
+  "oXIrm0": {
+    "defaultMessage": "Open infyicon.com",
+    "description": "Accessible label for the header link to the website"
+  },
+  "ox/o7k": {
+    "defaultMessage": "Search 160,000+ free icons…",
+    "description": "Placeholder text in the icon search box"
+  },
+  "vDbfLG": {
+    "defaultMessage": "All styles",
+    "description": "Style filter option: show every style"
+  },
+  "y2t77/": {
+    "defaultMessage": "View icon",
+    "description": "Secondary button that opens the icon's page on infyicon.com"
+  },
+  "yiZBn6": {
+    "defaultMessage": "Outline",
+    "description": "Icon style filter option"
+  },
+  "yjkGJu": {
+    "defaultMessage": "See all “{query}” icons on infyicon.com",
+    "description": "Link to the category page for the current search term"
+  }
+}
